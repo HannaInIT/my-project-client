@@ -24,7 +24,7 @@ function App() {
         <Route path="/cars" element={<CarsListPage />} />
 
 
-       {/* <Route path="/addcar" element={ <IsPrivate> <AddCarPage/> </IsPrivate> } /> */}
+       {/* <Route path="/cars" element={ <IsPrivate> <AddCarPage/> </IsPrivate> } /> */}
       <Route path="/addcar" element={ <AddCarPage/> }  /> 
       
         {/* <Route path="/cars/:carId" element={ <IsPrivate> <CarDetailsPage /> </IsPrivate> } /> */}

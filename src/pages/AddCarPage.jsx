@@ -6,7 +6,7 @@
 //     );
 //   }
    
-//   export default  AddCarPage;
+//   export default AddCarPage;
 
 
 import { useState } from "react";
@@ -31,7 +31,7 @@ function AddCarPage(props) {
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-        `${import.meta.env.VITE_API_URL}/addcar`,
+        `${import.meta.env.VITE_API_URL}/cars/cars`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
@@ -80,7 +80,7 @@ function AddCarPage(props) {
           onChange={(e) => setMaxSpeedInKm(e.target.value)}
         />
 
-        <label>Price per day:</label>
+        <label>Price per day, €:</label>
         <input
           type="number"
           name="price per day"

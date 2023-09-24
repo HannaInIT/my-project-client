@@ -22,10 +22,10 @@ function Navbar() {
     <Link to="/">
       <button>Home</button>
     </Link>
-
-    <Link to="/cars">
+ 
+     <Link to="/cars">
       <button>Cars</button>
-    </Link>
+    </Link> 
 
     {isLoggedIn && (
       <>
