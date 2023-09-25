@@ -1,13 +1,3 @@
-// function CarDetailsPage() {
-//   return (
-//     <div>
-//       <h1>This is a car details page</h1>
-//     </div>
-//   );
-// }
- 
-// export default CarDetailsPage;
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
@@ -57,20 +47,19 @@ function CarDetailsPage (props) {
         </>
       )}
 
-      
-      <AddReservationPage refreshCar={getCar} carId={props.carId} />          
-
-      { car && car.reservations.map((reservation) => (
-      <ReservationCardPage key={reservation._id} {...reservation} /> ))} 
-
       <Link to="/cars">
         <button>Back to cars</button>
       </Link>
           
-      <Link to={`/cars/edit/${props.carId}`}>
+      <Link to={`/cars/${props.carId}/edit`}>
         <button>Edit Car</button>
       </Link>
       
+      <AddReservationPage refreshCar={getCar} carId={props.carId} />          
+
+      { car && car.reservations && car.reservations.map((reservation) => (
+      <ReservationCardPage key={reservation._id} {...reservation} /> ))} 
+
     </div>
   );
 }

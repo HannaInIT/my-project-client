@@ -8,6 +8,8 @@ import CarDetailsPage from "./pages/CarDetailsPage";
 import EditCarPage from "./pages/EditCarPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import MyReservationsPage from "./pages/MyReservationsPage";
+import AddReservationPage from "./pages/AddReservationPage";
 
 // import IsPrivate from "./components/IsPrivate";
 // import IsAnon from "./components/IsAnon";
@@ -32,6 +34,15 @@ function App() {
        
         {/* <Route path="/cars/:carId/edit" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
         <Route path="/cars/:carId/edit" element={ <EditCarPage /> }   /> 
+
+        {/* <Route path="/myreservations" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
+        {/* <Route path="/reservations" element={ <AddReservationPage /> }   />   */}
+
+        {/* <Route path="/myreservations" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
+        <Route path="/myreservations" element={ <MyReservationsPage /> }   /> 
+
+        {/* <Route path="/myreservations" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
+        <Route path="/reservations/:reservationId" element={ <MyReservationsPage /> }   /> 
              
         {/* <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} /> */}
         <Route path="/signup" element={ <SignupPage />} /> 

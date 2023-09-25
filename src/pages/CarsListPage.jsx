@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AddCarPage from "../pages/AddCarPage";
 import CarCardPage from "../pages/CarCardPage";
 import { Link, useParams } from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 
-function CarsListPage() {
+function CarsListPage(props) {
   const [cars, setCars] = useState([]);
   const { imageUrl, maxSpeedInKm, pricePerDay } = useParams();
 
@@ -30,8 +29,7 @@ function CarsListPage() {
   return (
     <div className="CarsListPage">
       <h3>Cars</h3>
-      {/* <AddCarPage refreshCars={getAllCars} /> */}
-
+      
       {cars.map((car) => (
         <CarCardPage
           carId ={car._id}

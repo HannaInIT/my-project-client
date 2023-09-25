@@ -1,13 +1,3 @@
-// function LoginPage() {
-//   return (
-//     <div>
-//       <h1>This is a login page</h1>
-//     </div>
-//   );
-// }
- 
-// export default LoginPage;
-
 import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
