@@ -12,8 +12,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
-
 function AddCarPage(props) {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");

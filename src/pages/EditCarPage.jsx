@@ -12,8 +12,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from 'react-router-dom';
 
-const API_URL = "http://localhost:5005";
-
 function EditCarPage(props) {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -32,7 +30,7 @@ function EditCarPage(props) {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `${API_URL}/cars/cars/${carId}`,
+        `${import.meta.env.VITE_API_URL}/cars/cars/${carId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }    
       )
       .then((response) => {
@@ -59,7 +57,7 @@ function EditCarPage(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .put(
-        `${API_URL}/cars/cars/${carId}`,
+        `${import.meta.env.VITE_API_URL}/cars/cars/${carId}`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }              
       )
@@ -76,7 +74,7 @@ function EditCarPage(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${API_URL}/cars/cars/${carId}`,
+        `${import.meta.env.VITE_API_URL}/cars/cars/${carId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
       .then(() => navigate("/cars"))

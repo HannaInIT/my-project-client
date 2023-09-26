@@ -13,12 +13,7 @@ function ReservationCardPage() {
 // import axios from "axios";
 // import { Link, useParams } from "react-router-dom"; 
 // import AddReservationPage from "../pages/AddReservationPage";  
-
-
-
-// const API_URL = "http://localhost:5005";       
-
-
+       
 // function ReservationCardPage (props) {
 //     const [reservation, setReservationn] = useState(null);
    

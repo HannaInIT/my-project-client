@@ -4,9 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import ReservationCardPage from "../pages/ReservationCardPage";
 import AddReservationPage from "./AddReservationPage";
 
-const API_URL = "http://localhost:5005";
-
-
 function CarDetailsPage (props) {
   const [car, setCar] = useState(null);
   const { carId } = useParams();

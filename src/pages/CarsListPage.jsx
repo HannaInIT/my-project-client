@@ -3,8 +3,6 @@ import axios from "axios";
 import CarCardPage from "../pages/CarCardPage";
 import { Link, useParams } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
-
 function CarsListPage(props) {
   const [cars, setCars] = useState([]);
   const { imageUrl, maxSpeedInKm, pricePerDay } = useParams();

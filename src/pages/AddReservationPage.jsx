@@ -1,9 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
-
-
 function AddReservationPage(props) {
   const [pickupTime, setPickupTime ] = useState("");
   const [dropOffTime, setDropOffTime ] = useState("");

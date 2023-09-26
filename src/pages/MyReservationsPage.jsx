@@ -15,8 +15,6 @@ export default MyReservationsPage;
 // import ReservationCardPage from "../pages/ReservationCardPage";
 // import { Link, useParams } from "react-router-dom";
 
-// const API_URL = "http://localhost:5005";
-
 // function MyReservationsPage(props) {
 //   const [reservations, setReservations] = useState([]);
 //   const { name, pickupTime, dropOffTime, address, phone } = useParams();

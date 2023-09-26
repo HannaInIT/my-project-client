@@ -2,12 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom"; 
 import AddCarPage from "../pages/AddCarPage";  
-
-
-
-const API_URL = "http://localhost:5005";       
-
-
+    
 function CarCardPage (props) {
     const [car, setCar] = useState(null);
     // const { carId } = useParams();
