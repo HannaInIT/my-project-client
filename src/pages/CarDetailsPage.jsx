@@ -48,11 +48,11 @@ function CarDetailsPage (props) {
         <button>Back to cars</button>
       </Link>
           
-      <Link to={`/cars/${props.carId}/edit`}>
+      <Link to={`/cars/${carId}/edit`}>
         <button>Edit Car</button>
       </Link>
       
-      <AddReservationPage refreshCar={getCar} carId={props.carId} />          
+      <AddReservationPage refreshCar={getCar} carId={carId} />          
 
       { car && car.reservations && car.reservations.map((reservation) => (
       <ReservationCardPage key={reservation._id} {...reservation} /> ))} 

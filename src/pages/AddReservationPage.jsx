@@ -7,12 +7,14 @@ function AddReservationPage(props) {
   const [address, setAddress ] = useState("");
   const [phone, setPhone] = useState("");
 
+  const { carId } = props;
   
   const handleSubmit = (e) => {
+    alert (carId)
     e.preventDefault(); 
 
     // We need the project id when creating the new task
-    const { carId } = props;
+   
     // Create an object representing the body of the POST request
     const requestBody = { pickupTime, dropOffTime, address, phone, carId };
 
