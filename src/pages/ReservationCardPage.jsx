@@ -15,14 +15,14 @@ import { Link, useParams } from "react-router-dom";
 import AddReservationPage from "../pages/AddReservationPage";  
        
 function ReservationCardPage (props) {
-    const [reservation, setReservationn] = useState(null);
+    const [reservation, setReservation] = useState(null);
    
     const getReservation = () => {
       axios
         .get(`${import.meta.env.VITE_API_URL}/reservations/reservations/${props.reservationId}`)
         .then((response) => {
           const oneReservation = response.data;
-          setCar(oneReservation);
+          setReservation(oneReservation);
         })
         .catch((error) => console.log(error));
     };
@@ -34,15 +34,15 @@ function ReservationCardPage (props) {
    
     
     return (
-      <div className="ReservationCardPage">
+      <div className="reservation-card">
         {reservation && (
           <>
-            <h1>{car.name}</h1>
-            <p>{reservation.pickupTime}</p>
-            <p>{reservation.dropOffTime}</p>
-            <p>{reservation.address}</p>
-            <p>{reservation.phone}</p>
-            
+            {/* <h1>{car.name}</h1> */}
+            <p>Pickup Time: {reservation.pickupTime}</p>
+            <p>Drop-off Time: {reservation.dropOffTime}</p>
+            <p>Address: {reservation.address}</p>
+            <p>Phone: {reservation.phone}</p>
+           
           </>
         )}
         
@@ -54,9 +54,9 @@ function ReservationCardPage (props) {
         ))}  */}
         
    
-        <Link to="/reservations">
+        {/* <Link to="/reservations">
           <button>Back to reservations</button>
-        </Link>
+        </Link> */}
         
       </div>
     );

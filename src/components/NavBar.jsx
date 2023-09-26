@@ -33,7 +33,7 @@ function Navbar() {
           <button>Add your car</button>
         </Link>
 
-        <button onClick={toggleMenu}>My details</button>
+        {/* <button onClick={toggleMenu}>My details</button>
 
         {isMenuOpen && (
           <div className="dropdown-menu">
@@ -45,7 +45,7 @@ function Navbar() {
               <button>My reservations</button>
             </Link>
           </div>
-        )}
+        )} */}
 
         <button>Logout</button>
       </>

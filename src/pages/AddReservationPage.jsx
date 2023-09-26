@@ -10,7 +10,6 @@ function AddReservationPage(props) {
   const { carId } = props;
   
   const handleSubmit = (e) => {
-    alert (carId)
     e.preventDefault(); 
 
     // We need the project id when creating the new task

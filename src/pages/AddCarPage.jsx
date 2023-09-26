@@ -1,14 +1,3 @@
-// function AddCarPage() {
-//     return (
-//       <div>
-//         <h1>This is add car page</h1>
-//       </div>
-//     );
-//   }
-   
-//   export default AddCarPage;
-
-
 import { useState } from "react";
 import axios from "axios";
 

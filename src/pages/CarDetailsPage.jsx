@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import ReservationCardPage from "../pages/ReservationCardPage";
 import AddReservationPage from "./AddReservationPage";
+import ReservationsListPage from "./ReservationsListPage"
 
 function CarDetailsPage (props) {
   const [car, setCar] = useState(null);
@@ -52,7 +53,9 @@ function CarDetailsPage (props) {
         <button>Edit Car</button>
       </Link>
       
-      <AddReservationPage refreshCar={getCar} carId={carId} />          
+      <AddReservationPage refreshCar={getCar} carId={carId} />   
+
+      <ReservationsListPage refreshCar={getCar} carId={carId}/>
 
       { car && car.reservations && car.reservations.map((reservation) => (
       <ReservationCardPage key={reservation._id} {...reservation} /> ))} 

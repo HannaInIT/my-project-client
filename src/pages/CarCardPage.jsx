@@ -35,18 +35,6 @@ function CarCardPage (props) {
           </>
         )}
         
-        {/* <AddReservationPage refreshCar={getCar} carId={props.carId} />     */}
-   
-             
-        {/* { car && car.reservations.map((reservation) => (
-          <ReservationCardPage key={reservation._id} {...reservation} /> 
-        ))}  */}
-        
-   
-        {/* <Link to="/cars">
-          <button>Back to cars</button>
-        </Link> */}
-        
         <Link to={`/cars/${props.carId}`}>
           <button>More details</button>
         </Link>      
