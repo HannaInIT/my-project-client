@@ -35,13 +35,15 @@ function HomePage(props) {
     //     }
 
     return (
-      <div>
+       <div>
       <header>
           <h1>this is the homepage</h1>
           {/* <img src={YourImage} alt="Your Image" /> */}
       </header>
-  </div>
+  </div> 
     )
 }
 
 export default HomePage;
+
+

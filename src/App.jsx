@@ -8,7 +8,6 @@ import CarDetailsPage from "./pages/CarDetailsPage";
 import EditCarPage from "./pages/EditCarPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
-// import MyReservationsPage from "./pages/MyReservationsPage";
 import AddReservationPage from "./pages/AddReservationPage";
 import ReservationCardPage from "./pages/ReservationCardPage";
 
