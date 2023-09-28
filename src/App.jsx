@@ -11,7 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import AddReservationPage from "./pages/AddReservationPage";
 import ReservationCardPage from "./pages/ReservationCardPage";
 
-// import IsPrivate from "./components/IsPrivate";
+import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 
 function App() {
@@ -19,31 +19,30 @@ function App() {
     <div className="App">
       <Navbar />
 
-      <Routes>      
+      <Routes>
         <Route path="/" element={<HomePage />} />
 
 
         <Route path="/cars" element={<CarsListPage />} />
 
+        <Route path="/addcar" element={<IsPrivate> <AddCarPage /> </IsPrivate>} />
+        {/* <Route path="/addcar" element={ <AddCarPage/> }  />  */}
 
-       {/* <Route path="/cars" element={ <IsPrivate> <AddCarPage/> </IsPrivate> } /> */}
-      <Route path="/addcar" element={ <AddCarPage/> }  /> 
-      
-        {/* <Route path="/cars/:carId" element={ <IsPrivate> <CarDetailsPage /> </IsPrivate> } /> */}
-       <Route path="/cars/:carId" element={ <CarDetailsPage />} /> 
-       
-        {/* <Route path="/cars/:carId/edit" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
-        <Route path="/cars/:carId/edit" element={ <EditCarPage /> }   /> 
+        <Route path="/cars/:carId" element={<IsPrivate> <CarDetailsPage /> </IsPrivate>} />
+        {/* <Route path="/cars/:carId" element={ <CarDetailsPage />} />  */}
 
-         {/* <Route path="/myreservations" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
-         <Route path="/reservations/:reservationId" element={ <ReservationCardPage /> }   /> 
-             
+        <Route path="/cars/:carId/edit" element={<IsPrivate> <EditCarPage /> </IsPrivate>} />
+        {/* <Route path="/cars/:carId/edit" element={ <EditCarPage /> }   />  */}
+
+        <Route path="/reservations/:reservationId" element={<IsPrivate> <ReservationCardPage /> </IsPrivate>} />
+        {/* <Route path="/reservations/:reservationId" element={ <ReservationCardPage /> }   />  */}
+
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         {/* <Route path="/signup" element={ <SignupPage />} />  */}
 
 
-        {/* <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />  */}
-        <Route path="/login" element={ <LoginPage /> } /> 
+        <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+        {/* <Route path="/login" element={ <LoginPage /> } />  */}
 
       </Routes>
     </div>

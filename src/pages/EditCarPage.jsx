@@ -8,6 +8,7 @@ function EditCarPage(props) {
   const [maxSpeedInKm, setMaxSpeedInKm] = useState("");
   const [pricePerDay, setPricePerDay] = useState("");
   const [description, setDescription] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
   const { carId } = useParams();
@@ -52,7 +53,11 @@ function EditCarPage(props) {
       )
       .then((response) => {
         navigate(`/cars/${carId}`)
-      });
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      })
   };
 
 
@@ -87,7 +92,6 @@ function EditCarPage(props) {
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-
           <div className="mb-4">
             <label htmlFor="imege" className="form-label">Image:</label>
             <input
@@ -128,12 +132,15 @@ function EditCarPage(props) {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          </div>
+          </div> 
 
-          <button type="submit" class="btn btn-outline-success">Update Car</button>
+          <button type="submit" className="btn btn-outline-success">Update Car</button>
         </form>
 
-        <button onClick={deleteCar} type="submit" class="btn btn-outline-danger">Delete Car</button>
+        <button onClick={deleteCar} type="submit" className="btn btn-outline-danger">Delete Car</button>
+
+        { errorMessage && <p className="error-message">{errorMessage}</p> }
+        
       </div>
     </div>
   );

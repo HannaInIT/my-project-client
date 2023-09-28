@@ -6,6 +6,7 @@ function AddReservationPage(props) {
   const [dropOffTime, setDropOffTime ] = useState("");
   const [address, setAddress ] = useState("");
   const [phone, setPhone] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const { carId } = props;
   
@@ -38,7 +39,10 @@ function AddReservationPage(props) {
         // from the CarDetailsPage, to refresh the car details
         props.refreshCars();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      })
   };
 
   
@@ -88,6 +92,9 @@ function AddReservationPage(props) {
          </div>
 
         <button type="submit" className="btn btn-primary">Add Reservation</button>
+
+        { errorMessage && <p className="error-message">{errorMessage}</p> }
+
       </form>
       </div>
     </div>

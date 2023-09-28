@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -51,7 +51,7 @@
 }
 
 .custom-navbar {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 500;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
@@ -61,7 +61,7 @@
   background-color: rgba(155, 204, 124, 0.9);
   padding: 20px;
   border-radius: 8px;
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: 0 auto;
   margin-top: 0px; 
 }
@@ -71,3 +71,19 @@
   size: 40px;
 } */
 
+.error-message {
+  padding: 20px;
+  color: crimson;
+}
+
+.car-cards-container{
+  justify-content: center;
+}
+
+.car-card-container{
+  margin: 10px;
+}
+
+.image-background{
+  width: 100%;
+}

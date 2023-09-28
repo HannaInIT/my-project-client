@@ -18,7 +18,7 @@ function Navbar() {
   //  Update the rendering logic to display different content 
   //  depending on whether the user is logged in or not
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary w-100">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">Navbar</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,6 +32,11 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link" href="/cars">Cars</a>
             </li>
+<Link to="/addcar" className="nav-link">Add your car</Link>
+            {/* <li className="nav-item">
+              <a className="nav-link" href="/cars">Add your car</a>
+            </li> */}
+
           </ul>
        </div>
 
@@ -40,7 +45,7 @@ function Navbar() {
 
             {isLoggedIn && (
               <>
-                <Link to="/addcar" className="nav-link">Add your car</Link>
+                
 
                 {/* <Link to="/" className="btn btn-primary">Logout</Link> */}
 

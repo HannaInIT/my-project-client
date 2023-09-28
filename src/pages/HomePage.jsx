@@ -12,6 +12,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import image from '../assets/avtomobil.jpg'
 
 
 function HomePage(props) {
@@ -38,7 +39,7 @@ function HomePage(props) {
        <div>
       <header>
           <h1>this is the homepage</h1>
-          {/* <img src={YourImage} alt="Your Image" /> */}
+          <img src={image} alt="Your Image" className='image-background' />
       </header>
   </div> 
     )

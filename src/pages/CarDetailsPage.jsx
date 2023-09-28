@@ -3,10 +3,10 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import ReservationCardPage from "../pages/ReservationCardPage";
 import AddReservationPage from "./AddReservationPage";
-import ReservationsListPage from "./ReservationsListPage"
 
 function CarDetailsPage(props) {
   const [car, setCar] = useState(null);
+  const [reservations, setReservations] = useState([]);
   const { carId } = useParams();
 
   const getCar = () => {
@@ -24,11 +24,21 @@ function CarDetailsPage(props) {
         setCar(oneCar);
       })
       .catch((error) => console.log(error));
+
+
+      
+    axios
+    .get(`${import.meta.env.VITE_API_URL}/reservations/reservations-by-car/${carId}`)
+    .then((response) =>
+      setReservations(response.data))
+    .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getCar();
+
   }, []);
+
 
 
   return (
@@ -50,28 +60,34 @@ function CarDetailsPage(props) {
               )}
 
               <Link to="/cars">
-                <button type="button" class="btn btn-outline-secondary">Back to cars</button>
+                <button type="button" className="btn btn-outline-secondary">Back to cars</button>
               </Link>
 
               <Link to={`/cars/${carId}/edit`}>
-                <button type="submit" class="btn btn-outline-success">Edit Car</button>
+                <button type="submit" className="btn btn-outline-success">Edit Car</button>
               </Link>
             </div>
-            <AddReservationPage refreshCar={getCar} carId={carId} />
+            <AddReservationPage refreshCars={getCar} carId={carId} />
 
           </div>
           <div className="col-sm-4">
 
-            <ReservationsListPage refreshCar={getCar} carId={carId} />
-
-            {car && car.reservations && car.reservations.map((reservation) => (
-              <ReservationCardPage key={reservation._id} {...reservation} />))}
+       {reservations.length > 0 && <h3>Reservations</h3>}
+      {reservations && reservations.map((reservation) => (
+        <ReservationCardPage
+          reservationId={reservation._id}
+          key={reservation._id}
+          pickupTime={reservation.pickupTime}
+          dropOffTime={reservation.dropOffTime}
+          address={reservation.address}
+          phone={reservation.phone}
+        />
+      ))}
+    </div>
 
           </div>
         </div>
       </div>
-    </div>
-
 
   );
 }
