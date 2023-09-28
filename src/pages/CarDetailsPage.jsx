@@ -5,11 +5,10 @@ import ReservationCardPage from "../pages/ReservationCardPage";
 import AddReservationPage from "./AddReservationPage";
 import ReservationsListPage from "./ReservationsListPage"
 
-function CarDetailsPage (props) {
+function CarDetailsPage(props) {
   const [car, setCar] = useState(null);
   const { carId } = useParams();
-  
-  
+
   const getCar = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');
@@ -26,41 +25,54 @@ function CarDetailsPage (props) {
       })
       .catch((error) => console.log(error));
   };
-  
-  
-  useEffect(()=> {
-    getCar();
-  }, [] );
 
-  
+  useEffect(() => {
+    getCar();
+  }, []);
+
+
   return (
     <div className="CarDetailsPage">
-      {car && (
-        <>
-          <h1>{car.name}</h1>
-          <p>{car.imageUrl}</p>
-          <p>{car.maxSpeedInKm}</p>
-          <p>{car.pricePerDay}</p>
-          <p>{car.description}</p>
-        </>
-      )}
 
-      <Link to="/cars">
-        <button>Back to cars</button>
-      </Link>
-          
-      <Link to={`/cars/${carId}/edit`}>
-        <button>Edit Car</button>
-      </Link>
-      
-      <AddReservationPage refreshCar={getCar} carId={carId} />   
+      <div className="container text-center">
+        <div className="row">
+          <div className="col-sm-8">
+            <div className="card text-center">
 
-      <ReservationsListPage refreshCar={getCar} carId={carId}/>
+              {car && (
+                <>
+                  <h1>{car.name}</h1>
+                  <p>{car.imageUrl}</p>
+                  <p>Max speed: {car.maxSpeedInKm}</p>
+                  <p>Price per day: {car.pricePerDay}</p>
+                  <p>Description: {car.description}</p>
+                </>
+              )}
 
-      { car && car.reservations && car.reservations.map((reservation) => (
-      <ReservationCardPage key={reservation._id} {...reservation} /> ))} 
+              <Link to="/cars">
+                <button type="button" class="btn btn-outline-secondary">Back to cars</button>
+              </Link>
 
+              <Link to={`/cars/${carId}/edit`}>
+                <button type="submit" class="btn btn-outline-success">Edit Car</button>
+              </Link>
+            </div>
+            <AddReservationPage refreshCar={getCar} carId={carId} />
+
+          </div>
+          <div className="col-sm-4">
+
+            <ReservationsListPage refreshCar={getCar} carId={carId} />
+
+            {car && car.reservations && car.reservations.map((reservation) => (
+              <ReservationCardPage key={reservation._id} {...reservation} />))}
+
+          </div>
+        </div>
+      </div>
     </div>
+
+
   );
 }
 

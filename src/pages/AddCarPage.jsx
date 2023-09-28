@@ -28,7 +28,7 @@ function AddCarPage(props) {
         setImageUrl("");
         setMaxSpeedInKm("");
         setPricePerDay("");
-        setDescription("");     
+        setDescription("");
 
         props.refreshCars();
       })
@@ -38,54 +38,66 @@ function AddCarPage(props) {
 
   return (
     <div className="AddCar">
-      <h3>Add Car</h3>
+      <div className="form-container">
+        <h3>Add your car</h3>
 
-      <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
 
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+            <label htmlFor="name" className="form-label">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
 
-        <label>Image:</label>
-        <input
-          type="file"
-          name="image"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
+          <div className="mb-4">
+            <label htmlFor="image" className="form-label">Image</label>
+            <input
+              type="file"
+              name="image"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            />
+          </div>
 
-        <label>Max speed:</label>
-        <input
-          type="number"
-          name="max speed"
-          min="1" max="200"
-          value={maxSpeedInKm}
-          onChange={(e) => setMaxSpeedInKm(e.target.value)}
-        />
+          <div className="mb-4">
+            <label htmlFor="maxSpeedInKm" className="form-label">Max speed</label>
+            <input
+              type="number"
+              name="max speed"
+              min="1" max="200"
+              value={maxSpeedInKm}
+              onChange={(e) => setMaxSpeedInKm(e.target.value)}
+            />
+          </div>
 
-        <label>Price per day, €:</label>
-        <input
-          type="number"
-          name="price per day"
-          min="1"
-          value={pricePerDay}
-          onChange={(e) => setPricePerDay(e.target.value)}
-        />
+          <div className="mb-4">
+            <label htmlFor="pricePerDay" className="form-label">Price per day, €</label>
+            <input
+              type="number"
+              name="price per day"
+              min="1"
+              value={pricePerDay}
+              onChange={(e) => setPricePerDay(e.target.value)}
+            />
+          </div>
 
-        <label>Description:</label>
-        <textarea
-          type="text"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+          <div className="mb-4">
+            <label htmlFor="description" className="form-label">Description</label>
+            <textarea
+              type="text"
+              name="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
 
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }

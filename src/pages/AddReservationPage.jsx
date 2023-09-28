@@ -35,7 +35,7 @@ function AddReservationPage(props) {
         setPhone("");
       
         // Invoke the callback function coming through the props
-        // from the ProjectDetailsPage, to refresh the project details
+        // from the CarDetailsPage, to refresh the car details
         props.refreshCars();
       })
       .catch((error) => console.log(error));
@@ -44,44 +44,52 @@ function AddReservationPage(props) {
   
   return (
     <div className="AddReservationPage">
+      <div className="form-container"> 
       <h3>Add New Reservation</h3>
-      
       <form onSubmit={handleSubmit}>
-
-        <label>Pick up time:</label>
+      <div className="mb-3">
+        <label htmlFor="pickUpTime" className="form-label">Pick up time</label>
         <input
           type="text"
           name="pickupTime"
           value={pickupTime}
           onChange={(e) => setPickupTime(e.target.value)}
         />
+        </div>
 
-      <label>Drop off time:</label>
+        <div className="mb-3">
+      <label htmlFor="droppOffTime" className="form-label">Drop off time</label>
         <input
           type="text"
           name="dropOffTime"
           value={dropOffTime}
           onChange={(e) => setDropOffTime(e.target.value)}
         />
+          </div>
 
-        <label>Address:</label>
+        <div className="mb-3">
+        <label htmlFor="adress" className="form-label">Address</label>
         <input
           type="text"
           name="address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
         />
+         </div>
 
-        <label>Phone:</label>
+         <div className="mb-3">
+        <label htmlFor="phone" className="form-label">Phone</label>
         <input
           type="text"
           name="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
+         </div>
 
-        <button type="submit">Add Reservation</button>
+        <button type="submit" className="btn btn-primary">Add Reservation</button>
       </form>
+      </div>
     </div>
   );
 }

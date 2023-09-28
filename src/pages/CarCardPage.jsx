@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom"; 
-import AddCarPage from "../pages/AddCarPage";  
+import { Link, useParams } from "react-router-dom";  
     
 function CarCardPage (props) {
     const [car, setCar] = useState(null);
@@ -18,29 +17,36 @@ function CarCardPage (props) {
         .catch((error) => console.log(error));
     };
     
-    
     useEffect(()=> {
       getCar();
     }, [] );
    
     
     return (
-      <div className="CarCardPage">
-        {car && (
-          <>
-            <h1>{car.name}</h1>
-            <p>{car.pricePerDay}</p>
-            <p>{car.maxSpeedInKm}</p>
-            {/* <p>{car.description}</p> */}
-          </>
+<div className="row">
+<div className="col-sm-8">
+      <div className="card" style={{width: "18rem"}}>
+      {/* <img src="..." className="card-img-top" alt="..."> */}
+      <div className="card-body">
+      {car && (
+         <>
+        <h5 className="card-title">{car.name}</h5>
+        <p className="card-text"></p>
+        <p>Price per day: {car.pricePerDay}</p>
+        <p>Max speed: {car.maxSpeedInKm}</p>
+        </>
         )}
         
-        <Link to={`/cars/${props.carId}`}>
-          <button>More details</button>
-        </Link>      
-        
+        {/* <a href="#" className="btn btn-primary">More details</a> */}
+        <Link to={`/cars/${props.carId}`} className="btn btn-primary">More details</Link>
       </div>
+    </div>
+    </div>
+    </div>
     );
   }
    
   export default CarCardPage;
+
+
+

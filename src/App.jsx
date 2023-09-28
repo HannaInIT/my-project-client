@@ -12,7 +12,7 @@ import AddReservationPage from "./pages/AddReservationPage";
 import ReservationCardPage from "./pages/ReservationCardPage";
 
 // import IsPrivate from "./components/IsPrivate";
-// import IsAnon from "./components/IsAnon";
+import IsAnon from "./components/IsAnon";
 
 function App() {
   return (
@@ -35,17 +35,11 @@ function App() {
         {/* <Route path="/cars/:carId/edit" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
         <Route path="/cars/:carId/edit" element={ <EditCarPage /> }   /> 
 
-        {/* <Route path="/myreservations" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
-        {/* <Route path="/reservations" element={ <AddReservationPage /> }   />   */}
-
-        {/* <Route path="/myreservations" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
-        {/* <Route path="/myreservations" element={ <MyReservationsPage /> }   />   */}
-
          {/* <Route path="/myreservations" element={ <IsPrivate> <EditCarPage /> </IsPrivate> }  /> */}
          <Route path="/reservations/:reservationId" element={ <ReservationCardPage /> }   /> 
              
-        {/* <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} /> */}
-        <Route path="/signup" element={ <SignupPage />} /> 
+        <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
+        {/* <Route path="/signup" element={ <SignupPage />} />  */}
 
 
         {/* <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />  */}
