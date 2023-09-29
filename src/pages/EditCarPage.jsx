@@ -95,7 +95,7 @@ function EditCarPage(props) {
           <div className="mb-4">
             <label htmlFor="imege" className="form-label">Image:</label>
             <input
-              type="file"
+              type="text"
               name="image"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}

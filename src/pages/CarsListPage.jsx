@@ -27,26 +27,26 @@ function CarsListPage(props) {
   return (
     <div className="CarsListPage">
       <h3>Cars</h3>
-      <div class="container text-center">
-  <div class="row row-cols-auto car-cards-container">
+      <div className="container text-center">
+        <div className="row row-cols-auto car-cards-container">
 
 
-      {cars.map((car) => (
+          {cars.map((car) => (
 
-<div class="col car-card-container">
+            <div key={car._id} className="col car-card-container">
 
-        <CarCardPage
-          carId ={car._id}
-          key={car._id}
-          name={car.name}
-          imageUrl={car.imageUrl}
-          maxSpeedInKm={car.maxSpeedInKm}
-          pricePerDay={car.pricePerDay}
-        />
+              <CarCardPage
+                key={car._id}
+                carId={car._id}
+                name={car.name}
+                imageUrl={car.imageUrl}
+                maxSpeedInKm={car.maxSpeedInKm}
+                pricePerDay={car.pricePerDay}
+              />
+            </div>
+          ))}
         </div>
-      ))}
-        </div>
-</div>
+      </div>
     </div>
   );
 }

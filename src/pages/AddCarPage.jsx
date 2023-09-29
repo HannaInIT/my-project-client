@@ -67,7 +67,7 @@ function AddCarPage(props) {
           <div className="mb-4">
             <label htmlFor="image" className="form-label">Image</label>
             <input
-              type="file"
+              type="text"
               name="image"
               value={imageUrl}
               
