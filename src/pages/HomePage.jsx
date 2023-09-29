@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import carImage from "../images/avtomobil.jpg"
 
 function HomePage(props) {
 
@@ -8,7 +7,7 @@ function HomePage(props) {
     return (
        <div>
       <header>
-          <img src="../src/images/avtomobil.jpg" className="card-img-top" alt="car-image" />
+          <img src={carImage} className="card-img-top" alt="car-image" />
       </header>
       <footer>
       <div className="p-3 text-center">

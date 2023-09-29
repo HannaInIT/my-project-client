@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import carImage from "../images/avtomobil.jpg"
+import carImage from "../images/image-car.jpg"
 
 
 
