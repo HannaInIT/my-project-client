@@ -29,7 +29,7 @@ function CarCardPage(props) {
         <div className="card" style={{ width: "18rem" }}>
          
 
-          <img src="public/images/image-car.jpg" className="card-img-top" alt="car-image" />
+          <img src="../src/images/image-car.jpg" className="card-img-top" alt="car-image" />
           
           <div className="card-body">
             {car && (
