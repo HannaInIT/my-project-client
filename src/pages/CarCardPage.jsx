@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import carImage from "../images/avtomobil.jpg"
+
 
 
 function CarCardPage(props) {
@@ -29,7 +31,7 @@ function CarCardPage(props) {
         <div className="card" style={{ width: "18rem" }}>
          
 
-          <img src="../src/images/image-car.jpg" className="card-img-top" alt="car-image" />
+          <img src={carImage} className="card-img-top" alt="car-image" />
           
           <div className="card-body">
             {car && (
